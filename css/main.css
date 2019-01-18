@@ -1,0 +1,16 @@
+@import "reset.css";
+@import "vars.css";
+
+body {
+  background: url(../assets/img/bg.png) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.clock {
+  width: 28%;
+}
+
+.clock img {
+  width: 58%;
+  margin: 0 21%;
+}
