@@ -13,3 +13,11 @@
        url('../assets/fonts/cochin-bold.ttf') format('truetype');
   font-weight: bold;
 }
+
+@font-face {
+  font-family: 'Scribe';
+  src: url('../assets/fonts/scribe.woff2') format('woff2'),
+       url('../assets/fonts/scribe.woff') format('woff'),
+       url('../assets/fonts/scribe.ttf') format('truetype');
+  font-weight: regular;
+}

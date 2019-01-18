@@ -9,13 +9,20 @@ body {
   font-size: 62.5%;
 }
 
-.clock {
+.btn {
+  font-family: 'Scribe';
+}
+
+.ingame-left {
   width: 28%;
+}
+
+.clock {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 6fr 4fr;
   transform-origin: top center;
-  animation: swingClock 2s infinite;
+  animation: swingClock 3s infinite;
   animation-timing-function: ease-in-out;
 }
 
@@ -47,4 +54,23 @@ body {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
   align-self: center;
+}
+
+.stop {
+  width: 28%;
+  position: absolute;
+  bottom: 3vw;
+}
+
+.stop a {
+  background: url(../assets/img/stopbtn.png);
+  background-size: 100% 100%;
+  color: white;
+  text-decoration: none;
+  font-size: 2vw;
+  width: 60%;
+  margin: 0 35% 0 5%;
+  display: block;
+  text-align: center;
+  padding: 4.5vh 0 4vh;
 }
