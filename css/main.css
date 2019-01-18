@@ -115,3 +115,34 @@ body {
   width: 40%;
   margin: 7vw 30% 0;
 }
+
+.languageSelector {
+  position: absolute;
+  right: 3vw;
+  top: 3vh;
+  background: var(--DarkRed);
+  border-radius: .5rem;
+  font-family: helvetica;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.languageSelector p {
+  font-size: 1.5vw;
+  line-height: 2vw;
+  color: white;
+  padding: .5rem 1rem;
+}
+
+.languageSelector li {
+  font-size: 1.5vw;
+  line-height: 2vw;
+  color: white;
+  border-bottom: .03rem solid white;
+  font-weight: normal;
+  padding: 1rem 1.5rem;
+}
+
+.languageSelector li:last-child {
+  border: none;
+}
