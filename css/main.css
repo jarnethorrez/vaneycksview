@@ -14,6 +14,22 @@ body {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 6fr 4fr;
+  transform-origin: top center;
+  animation: swingClock 2s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes swingClock {
+  0% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    transform: rotate(3deg);
+  }
 }
 
 .clock img {

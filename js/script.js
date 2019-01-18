@@ -10,8 +10,6 @@ const init = () => {
 
 const timeUp = () => {
   console.log("Time's up");
-  // Move to end screen;
-
 }
 
 init();
