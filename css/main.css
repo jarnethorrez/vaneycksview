@@ -8,20 +8,92 @@ body {
   box-sizing: border-box;
   font-size: 62.5%;
   height: 100%;
+  text-align: center;
+  font-family: Cochin;
+  overflow: hidden;
+}
+
+.body--scan {
+  background: none;
+}
+
+.contentContainer {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentContainer h1 {
+  font-family: Scribe;
+  font-size: 3.6vw;
+  color: white;
+}
+
+.contentContainer p {
+  font-size: 2.8vw;
+  color: white;
+  line-height: 4vw;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 3vw;
+  margin-bottom: 10vw;
+}
+
+.contentContainer .afterGame {
+  width: 80%;
+  margin-top: 3vw;
+  margin-bottom: 2vw;
+}
+
+.penselenContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 8vw;
+}
+
+.penselen-image {
+  width: 18vw;
+  height: auto;
+  margin-right: -8vw;
+  margin-bottom: -2vw;
+}
+
+.no-penselen-image {
+  display: block;
+  width: 18vw;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 3vw;
+  margin-bottom: 12vw;
+}
+
+.penselen-aantal {
+  font-size: 8vw;
+  font-weight: bold;
+  color: white;
 }
 
 .btn {
-  font-family: 'Scribe';
-  background: url(../assets/img/stopbtn.png);
-  background-size: 100% 100%;
-  padding: 4.5vh 0 4vh;
-  display: block;
-  text-align: center;
-}
-
-.btn a {
+  font-family: Scribe;
+  font-size: 3.2vw;
   color: white;
   text-decoration: none;
+  background: url(../assets/img/button.png) no-repeat;
+  background-size: contain;
+  background-position: center 28%;
+  margin: 0 auto;
+  padding: 3vw 13vw;
+}
+
+.btn--left-corner {
+  font-size: 1.8vw;
+  background-position: center 45%;
+  padding: 3.2vw 4vw;
+  position: absolute;
+  left: 1vw;
+  bottom: 0;
 }
 
 .ingame-left {
@@ -67,55 +139,6 @@ body {
   align-self: center;
 }
 
-.stop {
-  width: 20%;
-  position: absolute;
-  bottom: 3vh;
-  left: 1vw;
-}
-
-.stop a {
-  font-size: 2vw;
-  width: 60%;
-  padding: 2vh 3vw;
-}
-
-.intro {
-  display: flex;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.intro h1 {
-  color: white;
-  font-family: Scribe;
-  font-size: 4vw;
-  text-align: center;
-}
-
-.intro p {
-  font-family: Cochin;
-  color: white;
-  font-size:  2.5vw;
-  line-height: 3.5vw;
-  width: 50%;
-  margin: 3vw 25% 0;
-  text-align: center;
-}
-
-.intro a {
-  width: 30%;
-  font-size: 3vw;
-  padding: 0 14vw;
-}
-
-.intro .btn {
-  width: 40%;
-  margin: 7vw 30% 0;
-}
-
 .languageSelector {
   position: absolute;
   right: 3vw;
@@ -128,6 +151,7 @@ body {
 }
 
 .languageSelector p {
+  font-family: sans-serif;
   font-size: 1.5vw;
   line-height: 2vw;
   color: white;
@@ -136,6 +160,7 @@ body {
 
 .languageSelector li {
   font-size: 1.5vw;
+  text-align: left;
   line-height: 2vw;
   color: white;
   border-bottom: .03rem solid white;
@@ -154,4 +179,23 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.brush-timer {
+  position: relative;
+  width: 110vw;
+  height: 2.3vw;
+  top: -.6vw;
+  left: -110vw;
+  background: url(../assets/img/brush-stroke-timer.png) no-repeat;
+  background-size: cover;
+}
+
+.scan-video {
+  display: block;
+  width: 60vw;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 5vw;
+  margin-bottom: 12vw;
 }
