@@ -7,10 +7,21 @@ body {
   background-size: cover;
   box-sizing: border-box;
   font-size: 62.5%;
+  height: 100%;
 }
 
 .btn {
   font-family: 'Scribe';
+  background: url(../assets/img/stopbtn.png);
+  background-size: 100% 100%;
+  padding: 4.5vh 0 4vh;
+  display: block;
+  text-align: center;
+}
+
+.btn a {
+  color: white;
+  text-decoration: none;
 }
 
 .ingame-left {
@@ -57,20 +68,50 @@ body {
 }
 
 .stop {
-  width: 28%;
+  width: 20%;
   position: absolute;
-  bottom: 3vw;
+  bottom: 3vh;
+  left: 1vw;
 }
 
 .stop a {
-  background: url(../assets/img/stopbtn.png);
-  background-size: 100% 100%;
-  color: white;
-  text-decoration: none;
   font-size: 2vw;
   width: 60%;
-  margin: 0 35% 0 5%;
-  display: block;
+  padding: 2vh 3vw;
+}
+
+.intro {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.intro h1 {
+  color: white;
+  font-family: Scribe;
+  font-size: 4vw;
   text-align: center;
-  padding: 4.5vh 0 4vh;
+}
+
+.intro p {
+  font-family: Cochin;
+  color: white;
+  font-size:  2.5vw;
+  line-height: 3.5vw;
+  width: 50%;
+  margin: 3vw 25% 0;
+  text-align: center;
+}
+
+.intro a {
+  width: 30%;
+  font-size: 3vw;
+  padding: 0 14vw;
+}
+
+.intro .btn {
+  width: 40%;
+  margin: 7vw 30% 0;
 }
