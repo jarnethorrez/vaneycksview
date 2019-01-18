@@ -1,16 +1,34 @@
 @import "reset.css";
+@import "fonts.css";
 @import "vars.css";
 
 body {
   background: url(../assets/img/bg.png) no-repeat center center fixed;
   background-size: cover;
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 .clock {
   width: 28%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 6fr 4fr;
 }
 
 .clock img {
   width: 58%;
   margin: 0 21%;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.clock .timer {
+  font-family: 'Cochin';
+  color: var(--DarkRed);
+  font-size: 4rem;
+  text-align: center;
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  align-self: center;
 }
