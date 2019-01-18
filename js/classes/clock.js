@@ -1,7 +1,8 @@
 class Clock {
 
-  constructor(seconds) {
+  constructor(seconds, timeUp) {
     this.secondsLeft = seconds;
+    this.timeUp = timeUp;
   }
 
   draw() {
@@ -32,6 +33,7 @@ class Clock {
       // if no seconds are left, clear timer.
       if(this.secondsLeft == 0) {
         clearInterval(timer);
+        this.timeUp();
       }
 
     }, 1000);
@@ -39,6 +41,7 @@ class Clock {
   }
 
   updateClock() {
+    // Select .timer and update innerText
     const $timer = document.querySelector(`.timer`);
     $timer.innerText = this.secondsLeft;
   }
