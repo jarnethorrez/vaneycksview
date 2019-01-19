@@ -1,4 +1,4 @@
-const Clock = require('./js/classes/Clock');
+const Clock = require(`../js/classes/Clock`);
 
 const init = () => {
     console.log(`init called from game.js`);

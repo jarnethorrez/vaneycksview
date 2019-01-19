@@ -1,4 +1,4 @@
-const BrushTimer = require('./js/classes/BrushTimer');
+const BrushTimer = require('../js/classes/BrushTimer');
 
 let scanned = false;
 const $overlay = document.querySelector(`.overlay-js`);
@@ -10,7 +10,7 @@ const init = () => {
         if (scanned) {
             scanComplete();
         }
-    }, 2000);
+    }, 3000);
 }
 
 const scanComplete = () => {

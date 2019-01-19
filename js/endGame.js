@@ -1,4 +1,4 @@
-const BrushTimer = require('./js/classes/BrushTimer');
+const BrushTimer = require('../js/classes/BrushTimer');
 
 const init = () => {
     let timer = new BrushTimer(10, timeUp);
