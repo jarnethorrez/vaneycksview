@@ -12,30 +12,33 @@ const init = () => {
 
 }
 
+const closeList = () => {
+  $short = document.createElement(`p`);
+  $short.innerText = $chosenLanguageShort;
+
+  $languageSelector.innerHTML = ``
+  $languageSelector.appendChild($short);
+
+  $languageSelector.classList.remove(`LSOpen`);
+  $overlay.classList.remove(`overlay`);
+}
+
 const handleLSClick = e => {
 
 
   if(!$languageSelector.classList.contains(`LSOpen`)) {
 
-    console.log('open the list');
     const $languageList = createLanguageList();
+
     $chosenLanguageShort = $languageSelector.innerText;
     $languageSelector.innerHTML = '';
+
     $languageSelector.appendChild($languageList);
     $languageSelector.classList.add(`LSOpen`);
     $overlay.classList.add(`overlay`);
 
   } else {
-    console.log($chosenLanguageShort);
-
-    $short = document.createElement(`p`);
-    $short.innerText = $chosenLanguageShort;
-
-    $languageSelector.innerHTML = ``
-    $languageSelector.appendChild($short);
-
-    $languageSelector.classList.remove(`LSOpen`);
-    $overlay.classList.remove(`overlay`);
+    closeList();
   }
 
 }
@@ -66,14 +69,7 @@ const createLanguageList = () => {
 }
 
 const handleOverlayClick = e => {
-  $short = document.createElement(`p`);
-  $short.innerText = $chosenLanguageShort;
-
-  $languageSelector.innerHTML = ``
-  $languageSelector.appendChild($short);
-
-  $languageSelector.classList.remove(`LSOpen`);
-  $overlay.classList.remove(`overlay`);
+  closeList();
 }
 
 init();
