@@ -5,12 +5,12 @@ class BrushTimer {
     constructor(seconds, timeUp) {
         this.time = seconds;
         this.timeUp = timeUp;
+        this.$brushStroke = document.querySelector(`.brush-timer`);;
     }
 
     draw() {
-        const $brushStroke = document.querySelector(`.brush-timer`);
         TweenLite
-        .to($brushStroke, this.time, {
+        .to(this.$brushStroke, this.time, {
             css: {left: '-6vw'},
             ease: Linear.easeNone
         })

@@ -13,6 +13,11 @@ body {
   overflow: hidden;
 }
 
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
 .body--scan {
   background: none;
 }
@@ -189,6 +194,7 @@ body {
   left: -110vw;
   background: url(../assets/img/brush-stroke-timer.png) no-repeat;
   background-size: cover;
+  z-index: 10;
 }
 
 .scan-video {
@@ -197,5 +203,50 @@ body {
   height: auto;
   margin: 0 auto;
   margin-top: 5vw;
-  margin-bottom: 12vw;
+  margin-bottom: 8vw;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  background-color: var(--VuilWit);
+  padding: 5vw 12vw;
+  border-radius: 1.5vw;
+}
+
+.popup h1 {
+  font-family: Scribe;
+  font-size: 3vw;
+}
+
+.popup p {
+  font-family: Cochin;
+  font-size: 2.5vw;
+  width: max-content;
+  margin: 0 auto;
+}
+
+
+.penselen-potje-container {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 4vw;
+  margin-bottom: 5vw;
+}
+
+.aantal-penselen {
+  color: var(--VuilWit);
+  position: absolute;
+  left: 47.8%;
+  top: 56%;
+  font-family: Cochin;
+  font-size: 5vw;
+}
+
+.penselen-potje-image {
+  position: relative;
+  width: 16vw;
+  height: auto;
 }
