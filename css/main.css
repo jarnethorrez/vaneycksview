@@ -195,7 +195,6 @@ body {
   background: url(../assets/img/brush-stroke-timer.png) no-repeat;
   background-size: cover;
   z-index: 10;
-  animation: brushTimer 3s;
 }
 
 @keyframes brushTimer {
