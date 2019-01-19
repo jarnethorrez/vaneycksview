@@ -7,7 +7,7 @@ const init = () => {
     score = localStorage.getItem("score");
     setScore();
 
-    let timer = new BrushTimer(10, timeUp);
+    let timer = new BrushTimer(5, timeUp);
     timer.draw();
 }
 
