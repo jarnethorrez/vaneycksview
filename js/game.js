@@ -8,9 +8,9 @@ const init = () => {
       localStorage.setItem("score", score);
     }
 
-    let c = new Clock(3, timeUp);
+    let c = new Clock(30, timeUp);
     c.draw();
-    c.startTimer();
+    //c.startTimer();
 }
 
 

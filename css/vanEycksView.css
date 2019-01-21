@@ -4,3 +4,37 @@
   box-sizing: border-box;
   font-size: 62.5%;
 }
+
+.ingame-flex {
+  display: flex;
+}
+
+.painting {
+  width: 44%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.painting img {
+  /* width: 100%; */
+  height: 95vh;
+  align-self: center;
+  border: .3rem solid var(--DarkRed);
+  box-sizing: border-box;
+  /* height: 100%; */
+}
+
+.ingame-right {
+  width: 28%;
+  color: white;
+  font-size: 2vw;
+  text-align: left;
+}
+
+.ingame-right .hint {
+  padding: 3vw;
+  margin: 2vw;
+  background: var(--DarkRed);
+  border-radius: 1vw;
+}
