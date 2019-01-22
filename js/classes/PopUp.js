@@ -61,12 +61,12 @@ class PopUp {
     $container.style.animationName = 'fadeOutPopup';
     $container.style.animationFillMode = 'forwards';
 
-    setTimeout(e => {
+    setTimeout(() => {
       const $container = document.querySelector(`.popup-container`);
       document.body.removeChild($container);
-    }, 750);
+      callback();
+    }, 750, callback);
 
-    callback();
 
   }
 
