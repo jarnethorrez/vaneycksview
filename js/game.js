@@ -1,11 +1,15 @@
 const Clock = require(`../js/classes/Clock`);
+const PopUp = require(`../js/classes/PopUp`);
 
 let score = 0;
 let $hints;
 let $colorFeedback;
-let time = 30;
+let time = 60;
 let c;
 let tapInstructionVisible = true;
+let popupTexts = ['In de kroonluchter brand maar een kaars, dit symboliseert de aanwezigheid van christus',
+                  'De sinaasappels zijn een teken van vruchtbaarheid, maar ook van rijkdom aangezien de sinaasappels niet van de streek waren en dus duur om te hebben.',
+                  'Het Arnoflini portret werd gemaakt naar aanleiding van hun huwelijk, het hondje in het schilderij symboliseert de trouw dat ze elkaar beloven'];
 
 const init = () => {
     initializeClock();
@@ -63,22 +67,12 @@ const handleDetailClick = e => {
   // Remove the clickRegion of the guessed detail
   e.currentTarget.parentNode.removeChild(e.currentTarget);
 
-  // Add positive visual feedback to the colorFeedback
-  $colorFeedback.style.animationName = "feedBackPositive";
-  $colorFeedback.style.animationDuration = "500ms";
-
-  // Remove animation once finished
-  setTimeout(() => {
-    $colorFeedback.style.animationName = "";
-    $colorFeedback.style.animationDuration = "";
-  }, 500);
-
   score++;
-
-  if (score == 3) {
-    localStorage.setItem(`score`, getScore());
-    window.location.href = "endGood.html";
-  }
+  let title;
+  (score != 3) ? title = 'Detail gevonden' : title = 'Laatste detail gevonden!';
+  const p = new PopUp(`../assets/img/detail${id}.png`, title, popupTexts[id], popupFinished);
+  p.draw();
+  c.pauseTime();
 
   if(tapInstructionVisible) {
     hideTapInstruction();
@@ -97,6 +91,16 @@ const getScore = () => {
   localStorage.setItem(`score`, finalScore);
 
   return finalScore;
+}
+
+const popupFinished = () => {
+
+  if(score == 3) {
+    localStorage.setItem(`score`, getScore());
+    window.location.href = "endGood.html";
+  }
+
+  c.unpauseTime();
 }
 
 

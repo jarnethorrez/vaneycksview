@@ -3,6 +3,7 @@ class Clock {
   constructor(seconds, timeUp) {
     this.secondsLeft = seconds;
     this.timeUp = timeUp;
+    this.paused = false;
   }
 
   draw() {
@@ -28,13 +29,15 @@ class Clock {
     // Start timer on every second
     const timer = setInterval(() => {
       //remove 1 second from seconds left & update visual clock
-      this.secondsLeft--;
-      this.updateClock();
+      if(!this.paused) {
+        this.secondsLeft--;
+        this.updateClock();
 
-      // if no seconds are left, clear timer.
-      if(this.secondsLeft == 0) {
-        clearInterval(timer);
-        this.timeUp();
+        // if no seconds are left, clear timer.
+        if(this.secondsLeft == 0) {
+          clearInterval(timer);
+          this.timeUp();
+        }
       }
 
     }, 1000);
@@ -45,6 +48,14 @@ class Clock {
     // Select .timer and update innerText
     const $timer = document.querySelector(`.timer`);
     $timer.innerText = this.secondsLeft;
+  }
+
+  pauseTime() {
+    this.paused = true;
+  }
+
+  unpauseTime() {
+    this.paused = false;
   }
 
 }
