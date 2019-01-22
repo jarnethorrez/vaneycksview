@@ -1,17 +1,13 @@
 const Clock = require(`../js/classes/Clock`);
 
-let score;
+let score = 0;
 let $hints;
 let $colorFeedback;
 let time = 30;
+let c;
 
 const init = () => {
-    window.onload = () => {
-      score = 4;
-      localStorage.setItem("score", score);
-    }
-
-    let c = new Clock(time, timeUp);
+    c = new Clock(time, timeUp);
     c.draw();
     c.startTimer();
 
@@ -27,7 +23,6 @@ const init = () => {
 }
 
 const handleColorFeedbackClick = e => {
-  console.log($colorFeedback);
   $colorFeedback.style.animationName = "feedBackNegative";
   $colorFeedback.style.animationDuration = "500ms";
   setTimeout(() => {
@@ -46,15 +41,32 @@ const handleDetailClick = e => {
   setTimeout(() => {
     $colorFeedback.style.animationName = "";
     $colorFeedback.style.animationDuration = "";
-  }, 500)
+  }, 500);
+
+  score++;
+
+  if (score == 3) {
+    localStorage.setItem(`score`, getScore());
+    window.location.href = "endGood.html";
+  }
+}
+
+const getScore = () => {
+  const finalScore = Math.round((score * 3) + (c.secondsLeft / (time/2)), 0);
+  localStorage.setItem(`score`, finalScore);
+
+  return finalScore;
 }
 
 
 const timeUp = () => {
   console.log("Time's up");
-
-  // NOG AANPASSEN NAAR ENDBAD.HTML IF (SCORE == 0)
-  window.location.href = "endGood.html";
+  if(getScore()) {
+      localStorage.setItem(`score`, getScore());
+      window.location.href = "endGood.html";
+  } else {
+    window.location.href = "endBad.html";
+  }
 }
 
 init();

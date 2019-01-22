@@ -13,9 +13,9 @@ class BrushTimer {
 
         this.$brushStroke.style.animationName = 'brushTimer';
         this.$brushStroke.style.animationDuration = `${this.time}s`;
-        this.$brushStroke.style.animationTimingFunction = 'ease-in-out';
+        this.$brushStroke.style.animationTimingFunction = 'linear';
         this.$brushStroke.style.animationFillMode = 'forwards';
-        
+
         setTimeout(() => {
           this.timeUp();
         }, this.time*1000);
