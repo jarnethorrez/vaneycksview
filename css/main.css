@@ -21,6 +21,10 @@ body {
   cursor: none;
 }
 
+a {
+  cursor: none;
+}
+
 .hidden {
   display: none;
   opacity: 0;
