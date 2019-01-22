@@ -12,6 +12,7 @@ class Clock {
     // create the image element for the Clock
     const $clock = document.createElement(`img`);
     $clock.src="../assets/img/clock3.png";
+    $clock.setAttribute(`draggable`, `false`)
 
     // create the seconds
     const $timer = document.createElement(`p`);

@@ -96,8 +96,8 @@
 }
 
 .tap-instruction {
-  width: 2.5vw;
-  height: 2.5vw;
+  width: 5vw;
+  height: 5vw;
   background: rgba(0, 0, 0, .5);
   border: .1rem solid rgba(255, 255, 255, .5);
   border-radius: 100%;
@@ -105,14 +105,27 @@
   grid-column: 2;
   align-self: end;
   justify-self: end;
-  margin-bottom: 4vh;
-  margin-right: 1vw;
+  margin-bottom: 8vh;
+  margin-right: 4vw;
 }
 
 .tap-instruction img {
   width: 80%;
   padding: 10%;
   opacity: .7;
+}
+
+.tap-instruction-hide {
+  animation: fadeOpacityTapInstruction 500ms forwards;
+}
+
+@keyframes fadeOpacityTapInstruction {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .ingame-right {
