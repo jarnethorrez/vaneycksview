@@ -12,19 +12,51 @@ let popupTexts = ['In de kroonluchter brand maar een kaars, dit symboliseert de 
                   'Het Arnoflini portret werd gemaakt naar aanleiding van hun huwelijk, het hondje in het schilderij symboliseert de trouw dat ze elkaar beloven'];
 
 const init = () => {
-    initializeClock();
-    initializeEventHandlers();
 
-    $hints = document.querySelectorAll(`.hint`);
+    initializeGame();
+
+    initializeClock();
+}
+
+const createHints = data => {
+
+  const $hintList = document.querySelector(`.ingame-right`);
+
+  data.forEach(detail => {
+    const $article = document.createElement(`article`);
+    $article.classList.add(`hint`);
+
+    const $p = document.createElement(`p`);
+    $p.innerText = detail[`hint`];
+
+    $article.appendChild($p);
+    // console.log(detail['hint']);
+
+    $hintList.appendChild($article);
+  });
+
+  initializeEventHandlers();
+
+}
+
+const initializeGame = () => {
+  fetch("../assets/data/details.json")
+    .then(r => r.json())
+    .then(data => {
+      createHints(data);
+    });
 }
 
 const initializeClock = () => {
   c = new Clock(time, timeUp);
   c.draw();
-  c.startTimer();
+  // c.startTimer();
 }
 
 const initializeEventHandlers = () => {
+
+  $hints = document.querySelectorAll(`.hint`);
+
   // attach event listeners to details
   $details = document.querySelectorAll(`.detail`);
   $details.forEach($detail => {
