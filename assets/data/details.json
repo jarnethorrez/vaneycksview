@@ -22,4 +22,28 @@
 	"top": "80%",
 	"left": "36%",
 	"img": "detail2.png"
+}, {
+	"hint": "Van Eyck weet wel hoe hij moet signeren.",
+	"popup": "'Johannes de eyck fuit hic 1434' of in moderne taal, Jan van Eyck was hier 1434",
+	"width": "15%",
+	"height": "4%",
+	"top": "21%",
+	"left": "42%",
+	"img": "detail3.png"
+}, {
+	"hint": "Wie is de mooiste van het land?",
+	"popup": "In de spiegel zie je nog 2 andere personen, mogelijks is 1 er van Jan Van Eyck. Rond de spiegel zijn beelden die het verhaal van Christus vertellen",
+	"width": "18%",
+	"height": "13%",
+	"top": "25%",
+	"left": "42%",
+	"img": "detail4.png"
+}, {
+	"hint": "Zet je schoenen maar aan de deur",
+	"popup": "Dit soort schoenen (patijnen) werden gebruikt om door modderige straten te lopen. Dat ze daar staan is een teken dat ze op gewijde grond staan.",
+	"width": "16%",
+	"height": "16%",
+	"top": "80%",
+	"left": "1%",
+	"img": "detail5.png"
 }]

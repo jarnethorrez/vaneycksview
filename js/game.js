@@ -9,11 +9,19 @@ let c;
 let tapInstructionVisible = true;
 let popupTexts = [];
 let popupImages = [];
+let amountOfDetails = 3;
 
-const init = () => {
+const shuffle = (array) => {
+    let tmp, current, top = array.length;
 
-    initializeGame();
-    initializeClock();
+    if(top) while(--top) {
+        current = Math.floor(Math.random() * (top + 1));
+        tmp = array[current];
+        array[current] = array[top];
+        array[top] = tmp;
+    }
+
+    return array;
 }
 
 const createHints = data => {
@@ -58,9 +66,14 @@ const initializeGame = () => {
   fetch("../assets/data/details.json")
     .then(r => r.json())
     .then(data => {
-      createHints(data);
-      createDetails(data);
-      setPopups(data);
+      shuffle(data);
+      const filteredTips = [];
+      for(let i = 0; i < amountOfDetails; i++) {
+        filteredTips.push(data[i]);
+      }
+      createHints(filteredTips);
+      createDetails(filteredTips);
+      setPopups(filteredTips);
       initializeEventHandlers();
     });
 }
@@ -128,7 +141,7 @@ const handleDetailClick = e => {
 
   score++;
   let title;
-  (score != 3) ? title = 'Detail gevonden' : title = 'Laatste detail gevonden!';
+  (score != amountOfDetails) ? title = 'Detail gevonden' : title = 'Laatste detail gevonden!';
   const p = new PopUp(`../assets/img/${popupImages[id]}`, title, popupTexts[id], popupFinished);
   p.draw();
   c.pauseTime();
@@ -154,7 +167,7 @@ const getScore = () => {
 
 const popupFinished = () => {
 
-  if(score == 3) {
+  if(score == amountOfDetails) {
     localStorage.setItem(`score`, getScore());
     window.location.href = "endGood.html";
   }
@@ -171,6 +184,12 @@ const timeUp = () => {
   } else {
     window.location.href = "endBad.html";
   }
+}
+
+const init = () => {
+
+    initializeGame();
+    initializeClock();
 }
 
 init();
