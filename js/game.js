@@ -14,14 +14,15 @@ let popupTexts = ['In de kroonluchter brand maar een kaars, dit symboliseert de 
 const init = () => {
 
     initializeGame();
-
     initializeClock();
 }
 
 const createHints = data => {
 
+  // Get parent element
   const $hintList = document.querySelector(`.ingame-right`);
 
+  // make article element for each hint
   data.forEach(detail => {
     const $article = document.createElement(`article`);
     $article.classList.add(`hint`);
@@ -30,12 +31,28 @@ const createHints = data => {
     $p.innerText = detail[`hint`];
 
     $article.appendChild($p);
-    // console.log(detail['hint']);
 
     $hintList.appendChild($article);
   });
 
-  initializeEventHandlers();
+}
+
+const createDetails = data => {
+
+  $parent = document.querySelector(`.clickListeners`);
+
+  for (let i=0; i < data.length; i++) {
+
+    $detail = document.createElement(`div`);
+    $detail.id = i;
+    $detail.classList.add(`detail`);
+    $detail.style.width = data[i]['width'];
+    $detail.style.height = data[i]['height'];
+    $detail.style.top = data[i]['top'];
+    $detail.style.left = data[i]['left'];
+
+    $parent.append($detail);
+  }
 
 }
 
@@ -44,6 +61,8 @@ const initializeGame = () => {
     .then(r => r.json())
     .then(data => {
       createHints(data);
+      createDetails(data);
+      initializeEventHandlers();
     });
 }
 
@@ -54,8 +73,6 @@ const initializeClock = () => {
 }
 
 const initializeEventHandlers = () => {
-
-  $hints = document.querySelectorAll(`.hint`);
 
   // attach event listeners to details
   $details = document.querySelectorAll(`.detail`);
@@ -88,6 +105,8 @@ const handleColorFeedbackClick = e => {
 }
 
 const handleDetailClick = e => {
+
+  $hints = document.querySelectorAll(`.hint`);
 
   // Get the id of the guessed detail
   const id = e.currentTarget.id;

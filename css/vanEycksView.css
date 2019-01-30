@@ -69,27 +69,6 @@
   }
 }
 
-.detailOne {
-  width: 2vw;
-  height: 6vh;
-  left: 15vw;
-  top: 7vh;
-}
-
-.detailTwo {
-  width: 2.5vw;
-  height: 10vh;
-  left: 3vw;
-  top: 44vh;
-}
-
-.detailThree {
-  width: 8vw;
-  height: 16vh;
-  left: 14vw;
-  top: 80vh;
-}
-
 .detail {
   /* background: rgba(0, 0, 0, .6); */
   position: absolute;
