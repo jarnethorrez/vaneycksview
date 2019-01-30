@@ -45,11 +45,11 @@ const createHints = data => {
 
 const createDetails = data => {
 
-  $parent = document.querySelector(`.clickListeners`);
+  const $parent = document.querySelector(`.clickListeners`);
 
   for (let i=0; i < data.length; i++) {
 
-    $detail = document.createElement(`div`);
+    const $detail = document.createElement(`div`);
     $detail.id = i;
     $detail.classList.add(`detail`);
     $detail.style.width = data[i]['width'];
@@ -90,13 +90,13 @@ const setPopups = data => {
 const initializeClock = () => {
   c = new Clock(time, timeUp);
   c.draw();
-  // c.startTimer();
+  c.startTimer();
 }
 
 const initializeEventHandlers = () => {
 
   // attach event listeners to details
-  $details = document.querySelectorAll(`.detail`);
+  const $details = document.querySelectorAll(`.detail`);
   $details.forEach($detail => {
     $detail.addEventListener(`click`, handleDetailClick);
   });
