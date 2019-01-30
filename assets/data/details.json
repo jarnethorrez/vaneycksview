@@ -4,19 +4,22 @@
 	"width": "5%",
 	"height": "6%",
 	"top": "7%",
-	"left": "40%"
+	"left": "40%",
+	"img": "detail0.png"
 }, {
 	"hint": "Die exotische vruchten komen van ver.",
 	"popup": "De sinaasappels zijn een teken van vruchtbaarheid, maar ook van rijkdom aangezien de sinaasappels niet van de streek waren en dus duur om te hebben.",
 	"width": "7%",
 	"height": "10%",
 	"top": "44%",
-	"left": "7%"
+	"left": "7%",
+	"img": "detail1.png"
 }, {
 	"hint": "Deze viervoeter verlaat je zijde nooit.",
 	"popup": "Het Arnoflini portret werd gemaakt naar aanleiding van hun huwelijk, het hondje in het schilderij symboliseert de trouw dat ze elkaar beloven",
 	"width": "22%",
 	"height": "16%",
 	"top": "80%",
-	"left": "36%"
+	"left": "36%",
+	"img": "detail2.png"
 }]

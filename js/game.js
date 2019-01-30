@@ -8,6 +8,7 @@ let time = 60;
 let c;
 let tapInstructionVisible = true;
 let popupTexts = [];
+let popupImages = [];
 
 const init = () => {
 
@@ -59,15 +60,16 @@ const initializeGame = () => {
     .then(data => {
       createHints(data);
       createDetails(data);
-      setPopupTexts(data);
+      setPopups(data);
       initializeEventHandlers();
     });
 }
 
-const setPopupTexts = data => {
-  
+const setPopups = data => {
+
   for(let i = 0; i < data.length; i++) {
     popupTexts.push(data[i][`popup`]);
+    popupImages.push(data[i][`img`]);
   }
 
 }
@@ -127,7 +129,7 @@ const handleDetailClick = e => {
   score++;
   let title;
   (score != 3) ? title = 'Detail gevonden' : title = 'Laatste detail gevonden!';
-  const p = new PopUp(`../assets/img/detail${id}.png`, title, popupTexts[id], popupFinished);
+  const p = new PopUp(`../assets/img/${popupImages[id]}`, title, popupTexts[id], popupFinished);
   p.draw();
   c.pauseTime();
 
