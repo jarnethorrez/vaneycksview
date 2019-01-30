@@ -7,9 +7,7 @@ let $colorFeedback;
 let time = 60;
 let c;
 let tapInstructionVisible = true;
-let popupTexts = ['In de kroonluchter brand maar een kaars, dit symboliseert de aanwezigheid van christus',
-                  'De sinaasappels zijn een teken van vruchtbaarheid, maar ook van rijkdom aangezien de sinaasappels niet van de streek waren en dus duur om te hebben.',
-                  'Het Arnoflini portret werd gemaakt naar aanleiding van hun huwelijk, het hondje in het schilderij symboliseert de trouw dat ze elkaar beloven'];
+let popupTexts = [];
 
 const init = () => {
 
@@ -31,7 +29,6 @@ const createHints = data => {
     $p.innerText = detail[`hint`];
 
     $article.appendChild($p);
-
     $hintList.appendChild($article);
   });
 
@@ -62,8 +59,17 @@ const initializeGame = () => {
     .then(data => {
       createHints(data);
       createDetails(data);
+      setPopupTexts(data);
       initializeEventHandlers();
     });
+}
+
+const setPopupTexts = data => {
+  
+  for(let i = 0; i < data.length; i++) {
+    popupTexts.push(data[i][`popup`]);
+  }
+
 }
 
 const initializeClock = () => {
