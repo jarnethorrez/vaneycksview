@@ -252,11 +252,12 @@ body {
   font-family: Cochin;
   font-size: 2.5vw;
   max-width: 40vw;
+  width: max-content;
   margin: 0 auto;
 }
 
 .already-played-game-p {
-  margin-top: 2vw;
+  padding-top: 2vw;
   line-height: 3vw;
 }
 

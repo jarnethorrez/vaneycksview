@@ -1,5 +1,7 @@
-const Clock = require(`../js/classes/Clock`);
-const PopUp = require(`../js/classes/PopUp`);
+// const Clock = require(`../js/classes/Clock`);
+import Clock from "../js/classes/Clock";
+// const PopUp = require(`../js/classes/PopUp`);
+import PopUp from "../js/classes/PopUp";
 
 let score = 0;
 let $hints;
