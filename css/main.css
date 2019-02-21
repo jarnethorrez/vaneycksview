@@ -19,10 +19,15 @@ body {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
-/*
-* {
+
+*,
+a,
+a:link,
+a:visited,
+a:active {
   cursor: none;
-} */
+}
+
 
 .hidden {
   display: none;
@@ -267,6 +272,16 @@ body {
   margin: 0 auto;
   margin-top: 4vw;
   margin-bottom: 5vw;
+}
+
+.penselen--user-totaal {
+  color: var(--VuilWit);
+  position: absolute;
+  left: 48%;
+  top: 56%;
+  font-family: Cochin;
+  font-size: 5vw;
+  text-align: center;
 }
 
 .aantal-penselen {
